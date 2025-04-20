@@ -88,16 +88,3 @@ def analyze_extremes_today():
                     }
 
     return highest, lowest
-
-
-if __name__ == "__main__":
-    highest, lowest = analyze_extremes_today()
-    today_str = datetime.utcnow().strftime("%d-%m-%Y")
-
-    with open(f"{today_str}_highest.json", "w", encoding="utf-8") as f:
-        json.dump(highest, f, ensure_ascii=False, indent=2)
-
-    with open(f"{today_str}_lowest.json", "w", encoding="utf-8") as f:
-        json.dump(lowest, f, ensure_ascii=False, indent=2)
-
-    print(f"📊 Վերլուծությունը ավարտվեց։ Արդյունքները պահպանված են՝\n👉 {today_str}_highest.json\n👉 {today_str}_lowest.json")
