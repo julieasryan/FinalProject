@@ -12,6 +12,8 @@ export default function Devices() {
 
   useEffect(() => {
     async function fetchDevices() {
+      setLoading(true);
+
       try {
         const res = await fetch(API_LIST);
         const deviceList = await res.json();
@@ -54,10 +56,10 @@ export default function Devices() {
 
         setGroupedDevices(grouped);
         setExpandedRegions(Object.fromEntries(Object.keys(grouped).map(r => [r, false])));
-    } catch (e) {
-      console.error("Error loading devices", e);
-    } finally {
-      setLoading(false);
+      } catch (e) {
+        console.error("Error loading devices", e);
+      } finally {
+        setLoading(false);
       }
     }
 
@@ -75,7 +77,7 @@ export default function Devices() {
     };
 
     const tips = [];
-  
+    
     if (parsed.pm !== null && parsed.pm >= 56) {
       tips.push("🚨 Air quality isn't great right now. If possible, try to stay indoors.");
     }
@@ -91,14 +93,12 @@ export default function Devices() {
     if (parsed.rain !== null && parsed.rain > 15) {
       tips.push("🌧 Looks like heavy rain is expected. Take an umbrella or stay cozy indoors.");
     }
-  
     if (tips.length === 0) {
       tips.push("🌿 Beautiful weather outside – great time for a walk or some fresh air!");
     }
-  
+
     return tips;
   }
-  
 
   function toggleRegion(region) {
     setExpandedRegions(prev => ({
@@ -109,23 +109,27 @@ export default function Devices() {
 
   return (
     <div className={styles.container}>
-      <h1>Live Device Data by Region</h1>
-      {loading ? <p>Loading...</p> :
+      <h1>📈 Live Device Data by Region</h1>
+      {loading ? (
+    <div className={styles.loader}></div>
+      ) : Object.keys(groupedDevices).length === 0 ? (
+        <p style={{ color: "red" }}>⚠️ No devices found.</p>
+      ) : (
         Object.entries(groupedDevices).map(([region, devices]) => (
           <div key={region} className={styles.regionBlock}>
             <button onClick={() => toggleRegion(region)} className={styles.regionToggle}>
-            {expandedRegions[region] ? "▼" : "▶"} {region}
+              {expandedRegions[region] ? "▼" : "▶"} {region}
             </button>
-                {expandedRegions[region] && (
-                <div className={styles.deviceGrid}>
-                    {devices.map((device, idx) => (
-                        <DeviceCard key={idx} {...device} />
-                    ))}
+            {expandedRegions[region] && (
+              <div className={styles.deviceGrid}>
+                {devices.map((device, idx) => (
+                  <DeviceCard key={idx} {...device} />
+                ))}
               </div>
             )}
           </div>
         ))
-      }
+      )}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 
 const navItems = [
   { name: "Devices", path: "/" },
-  { name: "Filter by Date", path: "/filter" },
+  { name: "Extremes", path: "/filter" },
   { name: "Suggestions", path: "/recommend" },
 ];
 
