@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Devices from "./pages/Devices";
-import DailyFilter from "./pages/DailyFilter";
-import Recommendations from "./pages/Recommendations";
+import Devices from "./pages/Devices/Devices";
+import DailyFilter from "./pages/DailyFilter/DailyFilter";
+import Recommendations from "./pages/Recommendations/Recommendations";
 
 function App() {
   return (

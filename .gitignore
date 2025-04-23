@@ -1,2 +1,2 @@
 venv/
-analyze/
+__pycache__/

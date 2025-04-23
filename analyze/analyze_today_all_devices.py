@@ -2,9 +2,10 @@ import requests
 from datetime import datetime
 import json
 from tqdm import tqdm
+import os
 
 API_ENDPOINT = "https://emvnh9buoh.execute-api.us-east-1.amazonaws.com/getData"
-DEVICE_LIST_URL = "https://climatenet.am/device_inner/list"
+DEVICE_JSON_PATH = "../climatenet-visual/public/data/devices.json"  # path to your local JSON file
 
 measurements = [
     "temperature", "uv", "pm2_5", "humidity", "pressure", "wind speed", "rain"
@@ -12,11 +13,10 @@ measurements = [
 
 def fetch_all_devices():
     try:
-        response = requests.get(DEVICE_LIST_URL)
-        response.raise_for_status()
-        return response.json()
+        with open(DEVICE_JSON_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
     except Exception as e:
-        print(f"[ERROR fetching devices]: {e}")
+        print(f"[ERROR reading devices.json]: {e}")
         return []
 
 def get_today_data(device_id):

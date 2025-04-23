@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DeviceCard from "../components/DeviceCard/DeviceCard";
+import DeviceCard from "../../components/DeviceCard/DeviceCard";
 import styles from "./Devices.module.css";
 
 export default function Devices() {
@@ -7,7 +7,7 @@ export default function Devices() {
   const [loading, setLoading] = useState(false);
   const [expandedRegions, setExpandedRegions] = useState({});
 
-  const API_LIST = "https://climatenet.am/device_inner/list";
+  const API_LIST = "/data/devices.json";
   const API_DATA = "https://emvnh9buoh.execute-api.us-east-1.amazonaws.com/getData";
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export default function Devices() {
           const data = result?.data?.[result.data.length - 1] || [];
           const keys = result?.keys || [];
           const entry = Object.fromEntries(keys.map((k, i) => [k, data[i]]));
+          const timestamp = entry.timestamp || "—";
 
           const issues = device.issues || [];
           const values = {
@@ -44,6 +45,7 @@ export default function Devices() {
             values,
             advice,
             issues,
+            timestamp
           };
         }));
 

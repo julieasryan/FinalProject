@@ -1,10 +1,13 @@
 import styles from "./DeviceCard.module.css";
 import MeasurementValue from "../MeasurementValue/MeasurementValue";
 
-export default function DeviceCard({ name, values, advice }) {
+export default function DeviceCard({ name, values, advice, timestamp }) {
   return (
     <div className={styles.card}>
-      <h3 className={styles.name}>{name}</h3>
+      <div className={styles.title}>
+        <h3 className={styles.name}>{name}</h3>
+        <h4 className={styles.time}>{timestamp}</h4>
+      </div>
       <div className={styles.measurements}>
         <div className={styles.measurementItem}>
           <span className={styles.measurementName}>PM</span>
