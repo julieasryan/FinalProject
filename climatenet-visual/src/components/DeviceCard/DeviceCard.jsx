@@ -10,7 +10,7 @@ export default function DeviceCard({ name, values, advice, timestamp }) {
       </div>
       <div className={styles.measurements}>
         <div className={styles.measurementItem}>
-          <span className={styles.measurementName}>PM</span>
+          <span className={styles.measurementName}>Air Pollution</span>
           <MeasurementValue type="pm2_5" value={values.PM} />
         </div>
         <div className={styles.measurementItem}>

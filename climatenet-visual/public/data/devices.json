@@ -130,32 +130,6 @@
         "longitude": "43.857348000000000"
     },
     {
-        "id": 9,
-        "issues": [
-            {
-                "id": 1,
-                "name": "Temperature, Humidity, Pressure",
-                "name_en": "Temperature, Humidity, Pressure",
-                "name_hy": "Ջերմաստիճան, խոնավություն, ճնշում"
-            },
-            {
-                "id": 2,
-                "name": "UV Index and Light Intensity",
-                "name_en": "UV Index and Light Intensity",
-                "name_hy": "UV ինդեքս և լույսի ինտենսիվություն"
-            }
-        ],
-        "generated_id": "11",
-        "name": "Amasia",
-        "name_en": "Amasia",
-        "name_hy": "Ամասիա",
-        "parent_name": "Shirak",
-        "parent_name_en": "Shirak",
-        "parent_name_hy": "Շիրակ",
-        "latitude": "40.952267000000000",
-        "longitude": "43.786408000000000"
-    },
-    {
         "id": 11,
         "issues": [],
         "generated_id": "7",
@@ -282,7 +256,14 @@
     },
     {
         "id": 21,
-        "issues": [],
+        "issues": [
+            {
+                "id": 3,
+                "name": "Air Pollution",
+                "name_en": "Air Pollution",
+                "name_hy": "Օդի աղտոտվածություն"
+            }
+        ],
         "generated_id": "19",
         "name": "Spitak",
         "name_en": "Spitak",
@@ -386,7 +367,14 @@
     },
     {
         "id": 30,
-        "issues": [],
+        "issues": [
+            {
+                "id": 1,
+                "name": "Temperature, Humidity, Pressure",
+                "name_en": "Temperature, Humidity, Pressure",
+                "name_hy": "Ջերմաստիճան, խոնավություն, ճնշում"
+            }
+        ],
         "generated_id": "28",
         "name": "Dsegh",
         "name_en": "Dsegh",

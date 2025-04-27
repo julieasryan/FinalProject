@@ -6,7 +6,7 @@ import axios from 'axios';
 const measurementLabels = {
   score: "🏆 Score",
   temperature: "🌡️ Temperature (°C)",
-  pm2_5: "🌫️ PM2.5 (μg/m³)",
+  pm2_5: "🌫️ Air Pollution (μg/m³)",
   humidity: "💧 Humidity (%)",
   uv: "🔆 UV Index"
 };

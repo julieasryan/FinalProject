@@ -18,7 +18,7 @@ ISSUE_MEASUREMENT_MAP = {
     "Temperature": ["temperature"],
     "UV": ["uv"],
     "Humidity": ["humidity"],
-    "Air Quality": ["pm2_5"]
+    "Air Pollution": ["pm2_5"]
 }
 
 # Define valid ranges for each measurement
@@ -188,7 +188,7 @@ def score_location(summary):
     uv = summary.get("uv")
     if uv is not None:
         measured_aspects += 1
-        if uv > 4:
+        if uv > 1 and uv < 3:
             score += 1
 
     # Low wind
