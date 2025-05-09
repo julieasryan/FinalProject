@@ -1,0 +1,51 @@
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+    gap: 5px;
+  }
+
+  .time {
+    margin: 0;
+    color: gray;
+    font-size: 10px;
+    font-style: italic;
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .measurements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .measurementItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .measurementName {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .advice {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+  }
+  

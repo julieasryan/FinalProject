@@ -1,0 +1,49 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .regionBlock {
+    padding-bottom: 12px;
+    border-top: 1px solid #ccc;
+    padding-top: 12px;
+  }
+  
+  .regionToggle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .deviceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  
+  .loader {
+    margin: 2rem auto;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media only screen and (max-width: 600px){
+    .container h1{
+      font-size: 1.5rem;
+    }
+  }
